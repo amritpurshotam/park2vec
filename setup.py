@@ -19,6 +19,7 @@ setup(
             "flake8-builtins==1.5.3",
             "flake8-comprehensions==3.5.0",
             "isort==5.8.0",
+            "rope==0.19.0",
         ],
         "test": ["pytest==6.2.4"],
     },
