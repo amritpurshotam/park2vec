@@ -1,14 +1,14 @@
-version: "3.9"
+version: '3'
+
 services:
-  postgres:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - 5432:5432
-    env_file: .env.dev
+  map:
+    image: overv/openstreetmap-tile-server
     volumes:
-      - db-data:/var/lib/postgresql/data/
+      - openstreetmap-data:/var/lib/postgresql/12/main
+    ports:
+      - "8080:80"
+    command: "run"
 
 volumes:
-  db-data:
+  openstreetmap-data:
+    external: true
